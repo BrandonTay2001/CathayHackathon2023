@@ -13,9 +13,9 @@ def generate(inputStr):
     response = openai.Completion.create(
       engine="generate-timetable",
       prompt=timetablePrompt + inputStr,
-      temperature=0.2,
+      temperature=0.9,
       max_tokens=4000,
-      top_p=0.5,
+      top_p=0,
       frequency_penalty=0,
       presence_penalty=0,
       best_of=1,
