@@ -13,7 +13,16 @@ def generate_timetable():
     prompt = request.json['prompt']
     startDate = request.json['startDate']
     endDate = request.json['endDate']
-    inputStr = f"Pacing: {pace}\nStart date: {startDate}\nPrompt: {prompt}\nDestination: {location}\nEnd date: {endDate}\n\nResponse (do not include newline characters in response):\n"
+    inputStr = f"""
+    Pacing: {pace}
+    Destination: {location}
+    Start date: {startDate}
+    End date: {endDate}
+    Prompt: {prompt}
+    
+    Apart from attractions, also fit in lunch and dinner recommendations between activities. Durations of each activity should be between 30 minutes to 90 minutes.
+    Response (do not include newline characters in response):
+    """
     processed_json = generate(inputStr)
     return jsonify(processed_json)
 
