@@ -1,4 +1,3 @@
-Request: 
 Pacing: Slow
 Start date: 18/11/2023
 Prompt: I want a romantic trip with lots of nature-related sightseeing
