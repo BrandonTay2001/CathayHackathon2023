@@ -5,6 +5,7 @@ from nltk.stem import WordNetLemmatizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
+
 def preprocess_text(text):
     tokens = word_tokenize(text.lower())
     stop_words = set(stopwords.words('english'))
@@ -12,6 +13,7 @@ def preprocess_text(text):
     tokens = [lemmatizer.lemmatize(token) for token in tokens if token.isalnum()]
     tokens = [token for token in tokens if token not in stop_words]
     return ' '.join(tokens)
+
 
 faq_data = [
     (
@@ -146,6 +148,7 @@ for question, answer in faq_data:
 
 vectorizer = TfidfVectorizer()
 faq_vectors = vectorizer.fit_transform(preprocessed_questions)
+
 
 def get_answer(user_question):
     preprocessed_user_question = preprocess_text(user_question)
