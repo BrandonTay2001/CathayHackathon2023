@@ -18,7 +18,7 @@ app = Flask(__name__)
 
 @app.route('/generate_timetable', methods=['POST'])
 def generate_timetable():
-    text = request.form.get('inputStr')
+    text = request.json['inputStr']
     processed_json = generate(text)
     return jsonify(processed_json)
 
